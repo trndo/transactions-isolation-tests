@@ -20,10 +20,10 @@ Marks:
 
 |Isolation Levels  | Lost Updates | Dirty Read | Non-repeatable Reads | Phantom Reads |
 |------------------|---|------------------------------------------|---------------------|---------------|
-| Read Uncommitted | ✅ | ❌ | ❌ | ❌             | 
-| Read Committed   | ✅ | ✅ | ❌ | ❌             | 
-| Repeatable Read  | ✅ | ✅ | ✅ | ❌             | 
-| Serializable     | ✅ | ✅ | ✅ | ✅             | 
+| Read Uncommitted | ✅ | ❌ | ❌ | ❌ | 
+| Read Committed   | ✅ | ✅ | ❌ | ❌ | 
+| Repeatable Read  | ✅ | ✅ | ✅ | ❌ | 
+| Serializable     | ✅ | ✅ | ✅ | ✅ | 
 
 **Examples**:
 1. `Lost Updates`:
@@ -72,10 +72,10 @@ TRX1:
 ## PostgreSql
 
 | Isolation Levels | Lost Updates | Dirty Read | Non-repeatable Reads | Phantom Reads |
-|------------------|---|-----------------------------------------|---------------------|--------------|
-| Read Committed   | ✅ | ✅ | ❌ | ❌            | 
-| Repeatable Read  | ✅ | ✅ | ✅ | ✅             | 
-| Serializable     | ✅ | ✅ | ✅ | ✅            | 
+|------------------|---|-----------------------------------------|---------------------|---|
+| Read Committed   | ✅ | ✅ | ❌ | ❌ | 
+| Repeatable Read  | ✅ | ✅ | ✅ | ✅ | 
+| Serializable     | ✅ | ✅ | ✅ | ✅ | 
 
 In PostgreSQL, you can request any of the four standard transaction isolation levels, but internally only three distinct isolation levels are implemented, i.e., PostgreSQL's Read Uncommitted mode behaves like Read Committed. This is because it is the only sensible way to map the standard isolation levels to PostgreSQL's multiversion concurrency control architecture.
 
